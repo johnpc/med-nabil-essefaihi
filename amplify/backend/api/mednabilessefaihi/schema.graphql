@@ -1,0 +1,6 @@
+type User @model @auth(rules: [{ allow: public, provider: iam }]) {
+  id: ID!
+  email: String!
+  administrationId: ID!
+  userType: String!
+}

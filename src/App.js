@@ -1,25 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
+import * as queries from './graphql/queries';
+Amplify.configure(awsExports);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [apiResponse, setApiResponse] = useState()
+  useEffect(() => {
+    const setupState = async () => {
+      const res = await API.graphql({
+        query: queries.listUsers,
+        authMode: 'AWS_IAM'
+      });
+      setApiResponse(res);
+    }
+    setupState()
+  }, []);
+  if (!apiResponse) return <>loading...</>
+  return <pre>{JSON.stringify(apiResponse, null, 2)}</pre>
 }
 
 export default App;

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mednabilessefaihi-dev-113227-authRole",
+      "UnauthRoleArn": "arn:aws:iam::520476783531:role/amplify-mednabilessefaihi-dev-113227-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::520476783531:role/amplify-mednabilessefaihi-dev-113227-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mednabilessefaihi-dev-113227-deployment",
+      "UnauthRoleName": "amplify-mednabilessefaihi-dev-113227-unauthRole",
+      "StackName": "amplify-mednabilessefaihi-dev-113227",
+      "StackId": "arn:aws:cloudformation:us-east-1:520476783531:stack/amplify-mednabilessefaihi-dev-113227/d9cdb570-f3a6-11eb-bc42-0ea47a628cf7",
+      "AmplifyAppId": "d1kiri42up5wnu"
+    },
+    "categories": {
+      "auth": {
+        "mednabilessefaihid1bd3aad": {}
+      }
+    }
+  }
+}
